@@ -9,9 +9,9 @@ import java.io.IOException;
 public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/view/login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        stage.setTitle("Steam Marketplace - Login");
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/login.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        stage.setTitle("Mercado de la comunidad de Steam");
         stage.setScene(scene);
         stage.show();
     }
