@@ -5,8 +5,8 @@ module edu.arf.liceo {
     requires mysql.connector.j;
 
     opens edu.arf.liceo to javafx.fxml;
-
     opens edu.arf.liceo.controller to javafx.fxml;
+    opens edu.arf.liceo.model to javafx.base;
 
     exports edu.arf.liceo;
 }
