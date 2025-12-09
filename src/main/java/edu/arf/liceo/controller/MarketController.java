@@ -59,4 +59,9 @@ public class MarketController implements Initializable {
         Stage stage = (Stage) btnLogout.getScene().getWindow();
         SceneSwitcher.switchScene("/login.fxml", "Steam Market Login", stage);
     }
+    @FXML
+    public void onVenderClick() {
+        Stage stage = (Stage) btnLogout.getScene().getWindow();
+        SceneSwitcher.switchScene("/sell_item.fxml", "Vender Item", stage);
+    }
 }

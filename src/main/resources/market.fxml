@@ -18,9 +18,9 @@
                 </font>
             </Label>
             <Button fx:id="btnLogout" alignment="CENTER_RIGHT" contentDisplay="CENTER" onAction="#onLogoutClick" text="Cerrar Sesion" textAlignment="JUSTIFY">
-            <cursor>
-               <Cursor fx:constant="CROSSHAIR" />
-            </cursor></Button>
+                <cursor>
+                    <Cursor fx:constant="CROSSHAIR" />
+                </cursor></Button>
         </HBox>
     </top>
 
@@ -43,10 +43,10 @@
             <padding>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="0.0" />
             </padding>
-            <Button style="-fx-background-color: #5c7e10; -fx-text-fill: white;" text="Vender Item" />
+            <Button text="Vender Item" onAction="#onVenderClick" style="-fx-background-color: #5c7e10; -fx-text-fill: white;" />
         </HBox>
     </bottom>
-   <cursor>
-      <Cursor fx:constant="CROSSHAIR" />
-   </cursor>
+    <cursor>
+        <Cursor fx:constant="CROSSHAIR" />
+    </cursor>
 </BorderPane>

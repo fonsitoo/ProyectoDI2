@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" spacing="15.0" prefWidth="500.0" prefHeight="600.0"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="edu.arf.liceo.controller.SellController">
+
+    <padding>
+        <Insets top="20" right="40" bottom="20" left="40"/>
+    </padding>
+
+    <Label text="VENDER NUEVO ITEM">
+        <font><Font name="System Bold" size="22.0"/></font>
+    </Label>
+
+    <VBox spacing="10.0" alignment="CENTER_LEFT">
+        <Label text="Nombre del Item:"/>
+        <TextField fx:id="txtNombre" promptText="Ej: AWP | Dragon Lore"/>
+
+        <Label text="Precio (€):"/>
+        <TextField fx:id="txtPrecio" promptText="0.00"/>
+
+        <Label text="Descripción:"/>
+        <TextArea fx:id="txtDescripcion" prefHeight="80.0"/>
+
+        <Label text="Float Value:"/>
+        <Slider fx:id="sliderFloat" min="0.0" max="1.0" value="0.5" blockIncrement="0.01"/>
+        <Label fx:id="lblFloatValue" text="0.5000" style="-fx-text-fill: blue;"/>
+
+        <CheckBox fx:id="chkStattrak" text="¿Es StatTrak™?"/>
+
+        <Label text="Visibilidad del anuncio:"/>
+        <HBox spacing="20.0">
+            <RadioButton fx:id="rbPublico" text="Público" selected="true">
+                <toggleGroup>
+                    <ToggleGroup fx:id="visibilidadGroup"/>
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rbAmigos" text="Solo Amigos" toggleGroup="$visibilidadGroup"/>
+        </HBox>
+    </VBox>
+
+    <HBox alignment="CENTER" spacing="20.0" style="-fx-padding: 20 0 0 0;">
+        <Button text="Cancelar" onAction="#onCancelarClick"/>
+        <Button text="Publicar Venta" onAction="#onGuardarClick" defaultButton="true"
+                style="-fx-background-color: #5c7e10; -fx-text-fill: white;"/>
+    </HBox>
+</VBox>
