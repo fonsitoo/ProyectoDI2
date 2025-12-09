@@ -1,7 +1,7 @@
 package edu.arf.liceo.dao;
 
 import edu.arf.liceo.model.Usuario;
-import edu.arf.liceo.JDBC.conexionbd;
+import edu.arf.liceo.utils.conexionbd;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

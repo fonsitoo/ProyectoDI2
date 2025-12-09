@@ -1,4 +1,4 @@
-package edu.arf.liceo.JDBC;
+package edu.arf.liceo.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
