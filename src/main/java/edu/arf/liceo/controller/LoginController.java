@@ -28,9 +28,10 @@ public class LoginController {
         Usuario usuario = dao.validarLogin(nick, pass);
 
         if (usuario != null) {
-            mostrarAlerta("Exito al iniciar sesión", "Bienvenido " + usuario.getNickname(), "Se ha iniciado sesion correctamente como " + (usuario.isEsAdmin() ? "Admin" : "Usuario normal"));
-        } else {
-            mostrarAlerta("Error al iniciar sesión", "Los datos proporcionados son incorrectos", "Usuario o contraseña no validos.");
+            mostrarAlerta("Éxito", "Bienvenido " + usuario.getNickname(), "Accediendo al mercado");
+
+            javafx.stage.Stage stage = (javafx.stage.Stage) txtNickname.getScene().getWindow();
+            edu.arf.liceo.utils.SceneSwitcher.switchScene("/market.fxml", "Mercado de la comunidad de Steam", stage);
         }
     }
 

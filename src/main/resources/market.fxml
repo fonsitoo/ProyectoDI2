@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.arf.liceo.controller.MarketController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #171a21;" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+            </padding>
+            <Label text="STEAM MARKET" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+            <Button fx:id="btnLogout" onAction="#onLogoutClick" text="Cerrar Sesión" />
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tableItems" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="colNombre" prefWidth="200.0" text="Nombre Item" />
+                <TableColumn fx:id="colPrecio" prefWidth="100.0" text="Precio (€)" />
+                <TableColumn fx:id="colFloat" prefWidth="100.0" text="Float" />
+                <TableColumn fx:id="colDesc" prefWidth="250.0" text="Descripción" />
+            </columns>
+            <BorderPane.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </BorderPane.margin>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="0.0" />
+            </padding>
+            <Button text="Vender Item" style="-fx-background-color: #5c7e10; -fx-text-fill: white;" />
+        </HBox>
+    </bottom>
+</BorderPane>
