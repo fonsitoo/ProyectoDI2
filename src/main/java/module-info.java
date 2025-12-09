@@ -6,7 +6,7 @@ module edu.arf.liceo {
 
     opens edu.arf.liceo to javafx.fxml;
 
+    opens edu.arf.liceo.controller to javafx.fxml;
+
     exports edu.arf.liceo;
-
-
 }
