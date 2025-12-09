@@ -48,4 +48,49 @@ public class ItemDAO {
         }
         return lista;
     }
+    public boolean insertarItem(Item item) {
+        String sql = "INSERT INTO item (nombre, descripcion, precio, float_value, fecha_publicacion, id_usuario, id_juego) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        try {
+            Connection con = conexionbd.getInstance().getConnection();
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setString(1, item.getNombre());
+            ps.setString(2, item.getDescripcion());
+            ps.setDouble(3, item.getPrecio());
+            ps.setDouble(4, item.getFloatValue());
+            ps.setDate(5, java.sql.Date.valueOf(item.getFechaPublicacion()));
+            ps.setInt(6, item.getIdUsuario());
+            ps.setInt(7, item.getIdJuego());
+
+            int filasAfectadas = ps.executeUpdate();
+            ps.close();
+
+            return filasAfectadas > 0;
+
+        } catch (SQLException e) {
+            System.err.println("Error al insertar item: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean eliminarItem(int idItem) {
+        String sql = "DELETE FROM item WHERE id_item = ?";
+
+        try {
+            Connection con = conexionbd.getInstance().getConnection();
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setInt(1, idItem);
+
+            int filasAfectadas = ps.executeUpdate();
+            ps.close();
+
+            return filasAfectadas > 0;
+
+        } catch (SQLException e) {
+            System.err.println("Error al eliminar item: " + e.getMessage());
+            return false;
+        }
+    }
 }
