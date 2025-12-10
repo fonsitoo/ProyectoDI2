@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" spacing="15.0" prefWidth="500.0" prefHeight="600.0"
+<VBox alignment="TOP_CENTER" spacing="15.0" prefWidth="500.0" prefHeight="650.0"
       xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="edu.arf.liceo.controller.SellController">
 
@@ -18,18 +18,23 @@
     </Label>
 
     <VBox spacing="10.0" alignment="CENTER_LEFT">
-        <Label text="Nombre del Item:"/>
-        <TextField fx:id="txtNombre" promptText="Ej: AWP | Dragon Lore"/>
+        <Label text="Nombre del Item (Skin):"/>
+        <TextField fx:id="txtNombre" promptText="Ej: AK-47 | Asiimov"/>
 
         <Label text="Precio (€):"/>
         <TextField fx:id="txtPrecio" promptText="0.00"/>
+        <Label fx:id="lblComision" text="Recibirás: 0.00€" style="-fx-text-fill: green; -fx-font-style: italic;"/>
 
         <Label text="Descripción:"/>
         <TextArea fx:id="txtDescripcion" prefHeight="80.0"/>
 
-        <Label text="Float Value:"/>
+        <Label text="Desgaste (Float Value):"/>
         <Slider fx:id="sliderFloat" min="0.0" max="1.0" value="0.5" blockIncrement="0.01"/>
-        <Label fx:id="lblFloatValue" text="0.5000" style="-fx-text-fill: blue;"/>
+
+        <HBox spacing="10">
+            <Label fx:id="lblFloatValue" text="0.5000" style="-fx-text-fill: blue;"/>
+            <Label fx:id="lblWearName" text="(Battle-Scarred)" style="-fx-font-weight: bold;"/>
+        </HBox>
 
         <CheckBox fx:id="chkStattrak" text="¿Es StatTrak™?"/>
 
