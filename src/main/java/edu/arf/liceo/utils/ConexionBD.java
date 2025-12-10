@@ -4,16 +4,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class conexionbd {
+public class ConexionBD {
 
-    private static conexionbd instance;
+    private static ConexionBD instance;
     private Connection connection;
 
     private final String URL = "jdbc:mysql://localhost:3306/marketplacesteam_db";
     private final String USER = "root";
     private final String PASSWORD = "";
 
-    private conexionbd() {
+    private ConexionBD() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             this.connection = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -22,13 +22,13 @@ public class conexionbd {
         }
     }
 
-    public static conexionbd getInstance() {
+    public static ConexionBD getInstance() {
         if (instance == null) {
-            instance = new conexionbd();
+            instance = new ConexionBD();
         } else {
             try {
                 if (instance.getConnection().isClosed()) {
-                    instance = new conexionbd();
+                    instance = new ConexionBD();
                 }
             } catch (SQLException e) {
                 e.printStackTrace();

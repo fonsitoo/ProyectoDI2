@@ -28,6 +28,7 @@ public class LoginController {
         Usuario usuario = dao.validarLogin(nick, pass);
 
         if (usuario != null) {
+            edu.arf.liceo.utils.UserSession.getInstance().setUsuario(usuario);
             mostrarAlerta("Éxito", "Bienvenido " + usuario.getNickname(), "Accediendo al mercado");
 
             javafx.stage.Stage stage = (javafx.stage.Stage) txtNickname.getScene().getWindow();

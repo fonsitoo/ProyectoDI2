@@ -11,6 +11,8 @@ public class MainApp extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+
         stage.setTitle("Mercado de la comunidad de Steam");
         stage.setScene(scene);
         stage.show();

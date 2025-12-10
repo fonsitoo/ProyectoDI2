@@ -1,7 +1,7 @@
 package edu.arf.liceo.dao;
 
 import edu.arf.liceo.model.Categoria;
-import edu.arf.liceo.utils.conexionbd;
+import edu.arf.liceo.utils.ConexionBD;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,7 +17,7 @@ public class CategoriaDAO {
         String sql = "SELECT * FROM categoria";
 
         try {
-            Connection con = conexionbd.getInstance().getConnection();
+            Connection con = ConexionBD.getInstance().getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
@@ -36,7 +36,7 @@ public class CategoriaDAO {
         String sql = "INSERT INTO item_categoria (id_item, id_categoria) VALUES (?, ?)";
 
         try {
-            Connection con = conexionbd.getInstance().getConnection();
+            Connection con = ConexionBD.getInstance().getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
 
             for (Categoria cat : categoriasSeleccionadas) {
@@ -47,7 +47,6 @@ public class CategoriaDAO {
 
             ps.executeBatch();
             ps.close();
-            System.out.println("Categorías asociadas correctamente.");
 
         } catch (SQLException e) {
             System.err.println("Error al asociar categorías: " + e.getMessage());
@@ -58,7 +57,7 @@ public class CategoriaDAO {
         int id = 0;
         String sql = "SELECT MAX(id_item) AS last_id FROM item";
         try {
-            Connection con = conexionbd.getInstance().getConnection();
+            Connection con = ConexionBD.getInstance().getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {

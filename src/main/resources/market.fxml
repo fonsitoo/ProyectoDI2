@@ -17,10 +17,20 @@
                     <Font name="System Bold" size="20.0" />
                 </font>
             </Label>
-            <Button fx:id="btnLogout" alignment="CENTER_RIGHT" contentDisplay="CENTER" onAction="#onLogoutClick" text="Cerrar Sesion" textAlignment="JUSTIFY">
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <Label fx:id="lblUsuarioActivo" text="Cargando usuario..." textFill="#66c0f4">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+
+            <Button fx:id="btnLogout" onAction="#onLogoutClick" text="Cerrar Sesión">
                 <cursor>
-                    <Cursor fx:constant="CROSSHAIR" />
-                </cursor></Button>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+            </Button>
         </HBox>
     </top>
 
@@ -43,10 +53,18 @@
             <padding>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="0.0" />
             </padding>
-            <Button text="Vender Item" onAction="#onVenderClick" style="-fx-background-color: #5c7e10; -fx-text-fill: white;" />
+
+            <Button fx:id="btnEliminar" managed="false" onAction="#onEliminarClick" style="-fx-background-color: #a03030; -fx-text-fill: white;" text="Eliminar Seleccionado" visible="false">
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+            </Button>
+
+            <Button onAction="#onVenderClick" style="-fx-background-color: #5c7e10; -fx-text-fill: white;" text="Vender Item">
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+            </Button>
         </HBox>
     </bottom>
-    <cursor>
-        <Cursor fx:constant="CROSSHAIR" />
-    </cursor>
 </BorderPane>

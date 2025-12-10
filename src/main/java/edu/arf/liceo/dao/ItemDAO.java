@@ -1,7 +1,7 @@
 package edu.arf.liceo.dao;
 
 import edu.arf.liceo.model.Item;
-import edu.arf.liceo.utils.conexionbd;
+import edu.arf.liceo.utils.ConexionBD;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,7 +17,7 @@ public class ItemDAO {
         String sql = "SELECT * FROM item";
 
         try {
-            Connection con = conexionbd.getInstance().getConnection();
+            Connection con = ConexionBD.getInstance().getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
@@ -52,7 +52,7 @@ public class ItemDAO {
         String sql = "INSERT INTO item (nombre, descripcion, precio, float_value, fecha_publicacion, id_usuario, id_juego) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try {
-            Connection con = conexionbd.getInstance().getConnection();
+            Connection con = ConexionBD.getInstance().getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setString(1, item.getNombre());
@@ -78,7 +78,7 @@ public class ItemDAO {
         String sql = "DELETE FROM item WHERE id_item = ?";
 
         try {
-            Connection con = conexionbd.getInstance().getConnection();
+            Connection con = ConexionBD.getInstance().getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setInt(1, idItem);

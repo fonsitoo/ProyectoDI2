@@ -1,0 +1,3 @@
+ADMIN: GabeN | admin123
+USERS: NoobPlayer | 0000
+       TraderPro | 1234
