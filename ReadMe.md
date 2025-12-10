@@ -8,7 +8,7 @@ La aplicación simula el mercado de compra-venta de items de la plataforma Steam
 El proyecto ha sido desarrollado siguiendo una arquitectura por capas estricta para garantizar la mantenibilidad y escalabilidad del código.
 
 --- Tecnologías y Patrones
-* Lenguaje: Java 17 (OpenJDK).
+* Lenguaje: Java 21 (OpenJDK).
 * Interfaz Gráfica: JavaFX con diseño definido en archivos FXML.
 * Gestión de Dependencias: Maven.
 * Base de Datos: MySQL (Conector JDBC mysql-connector-j).
