@@ -1,7 +1,7 @@
 package edu.arf.liceo.dao;
 
 import edu.arf.liceo.model.Usuario;
-import edu.arf.liceo.utils.conexionbd;
+import edu.arf.liceo.utils.ConexionBD;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,7 +15,7 @@ public class UsuarioDAO {
         String sql = "SELECT * FROM usuario WHERE nickname = ? AND password = ?";
 
         try {
-            Connection connection = conexionbd.getInstance().getConnection();
+            Connection connection = ConexionBD.getInstance().getConnection();
 
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, nickname);
